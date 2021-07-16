@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {       
-        $banners =  DB::table('Banners')->select('id','texto1','texto2','link','botao')->get();
+        $banners =  DB::table('banners')->select('id','texto1','texto2','link','botao')->get();
             return view('home', compact('banners'));    
     }
     public function users()

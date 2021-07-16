@@ -3,20 +3,22 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Narcos Admin</title>
+	<link rel="shortcut icon" type="image/x-icon" href="/public/assets/images/favicon-96x96.png">
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/public/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/public/assets/assets/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="/public/assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+    <link rel="shortcut icon" href="/public/assets/images/favicon.png" />
   </head>
   <body>
     <div class="container-scroller">
@@ -30,9 +32,10 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+                        {{ csrf_field() }}
+<input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -102,16 +105,16 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="/../../public/assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="../../assets/js/off-canvas.js"></script>
-    <script src="../../assets/js/hoverable-collapse.js"></script>
-    <script src="../../assets/js/misc.js"></script>
-    <script src="../../assets/js/settings.js"></script>
-    <script src="../../assets/js/todolist.js"></script>
+    <script src="/../../public/assets/js/off-canvas.js"></script>
+    <script src="/../../public/assets/js/hoverable-collapse.js"></script>
+    <script src="/../../public/assets/js/misc.js"></script>
+    <script src="/../../public/assets/js/settings.js"></script>
+    <script src="/../../public/assets/js/todolist.js"></script>
     <!-- endinject -->
   </body>
 </html>
